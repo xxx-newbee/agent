@@ -1,0 +1,14 @@
+langchain 
+langchain-community 
+pymilvus
+pypdf 
+python-docx 
+bs4 
+markdown2
+torch 
+torchvision 
+torchaudio
+sentence-transformers
+docx2txt
+unstructured
+markdown
