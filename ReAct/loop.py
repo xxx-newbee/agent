@@ -4,7 +4,7 @@ import system_prompt
 import tool
 
 BASE_URL = "http://localhost:11434/v1"
-MODEL = "qwen3.5:9b"
+MODEL = "qwen/qwen3.5-9b"
 
 llm = Agent(model=MODEL, base_url=BASE_URL)
 user_prompt = input()

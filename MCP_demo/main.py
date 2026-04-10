@@ -5,7 +5,7 @@ from qwen_agent.utils.output_beautify import typewriter_print
 llm_cfg = {
     'model': 'qwen/qwen3.5-9b',  # 确保这里的模型名称与你用 ollama pull 下载的一致
     'model_server': 'http://localhost:11434/v1',  # Ollama 的 API 地址
-    'api_key': 'EMPTY',  # Ollama 本地服务不需要 API Key
+    'api_key': 'EMPTY',  # Ollama 本地服务不需要 API Key 
 }
 
 # 2. 定义你的工具，这里配置你之前创建的 MCP 服务
@@ -16,6 +16,14 @@ tools = [
             'Math': {  # 给你的服务起个名字
                 'command': 'python3',  # 启动服务的命令
                 'args': ['./mathserver.py']  # 你的 MCP 服务脚本的绝对路径
+            },
+            'Time': {
+                'command': 'python3',
+                'args': ['./timeserver.py']
+            },
+            'DB': {
+                'command': 'python3',
+                'args': ['./storeserver.py']
             }
         }
     }
@@ -25,7 +33,7 @@ tools = [
 bot = Assistant(llm=llm_cfg, function_list=tools)
 
 # 4. 发送消息并获取回复
-messages = [{'role': 'user', 'content': '帮我计算一下 15 除 3 等于多少？'}]
+messages = [{'role': 'user', 'content': '获取所有用户数据'}]
 
 # 运行助手并打印结果
 response_plain_text = ""
