@@ -3,7 +3,7 @@ from qwen_agent.utils.output_beautify import typewriter_print
 
 # 1. 配置本地 Qwen3.5 模型 (通过 Ollama 提供服务)
 llm_cfg = {
-    'model': 'qwen/qwen3.5-9b',  # 确保这里的模型名称与你用 ollama pull 下载的一致
+    'model': 'qwen3.5:9b',  # 确保这里的模型名称与你用 ollama pull 下载的一致
     'model_server': 'http://localhost:11434/v1',  # Ollama 的 API 地址
     'api_key': 'EMPTY',  # Ollama 本地服务不需要 API Key 
 }
